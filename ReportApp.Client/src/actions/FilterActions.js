@@ -19,3 +19,20 @@ export const getCurrentWeeks = () => dispatch => {
       toastr.error("Connection error");
     });
 };
+
+export const getDefaultWeek = () => dispatch => {
+  dispatch(beginAjaxCall());
+  axios
+    .get("/api/ServiceRequestReport/GetServiceRequestDefaultWeek")
+    .then(res => {
+      dispatch({
+        type: types.LOAD_DEFAULT_WEEK,
+        payload: res.data
+      });
+      dispatch(endAjaxCall());
+    })
+    .catch(error => {
+      dispatch(ajaxCallError(error));
+      toastr.error("Connection error");
+    });
+};

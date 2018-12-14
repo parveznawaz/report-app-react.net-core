@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import LoadingPanel from "../common/LoadingPanel";
-import { getListOfGtinNotReceived } from "../../actions/listOfGtinNotReceivedActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import ReportGrid from "../common/ReportGrid";

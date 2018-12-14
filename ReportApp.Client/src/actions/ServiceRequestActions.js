@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as types from "./actionTypes";
-import { beginAjaxCall, ajaxCallError } from "./ajaxStatusActions";
+import { beginAjaxCall, ajaxCallError, endAjaxCall } from "./ajaxStatusActions";
 import moment from "moment";
 import { DateFormat } from "../config/Settings";
 import toastr from "toastr";
@@ -16,9 +16,10 @@ export const getListOfGtinNotReceived = () => dispatch => {
         row.DateScheduled = moment(row.DateScheduled).format(DateFormat);
       });
       dispatch({
-        type: types.LOAD_LIST_OF_GTIN_NOT_RECEIVED_SUCCESS,
+        type: types.LOAD_LIST_OF_GTIN_NOT_RECEIVED,
         payload: res.data
       });
+      dispatch(endAjaxCall());
     })
     .catch(error => {
       dispatch(ajaxCallError(error));
