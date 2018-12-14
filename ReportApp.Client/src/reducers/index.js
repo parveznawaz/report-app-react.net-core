@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import listOfGtinNotReceived from "./listOfGtinNotReceivedReducer";
-import serviceRequestCurrentWeeks from "./serviceRequestCurrentWeeksReducer";
+import weeks from "./weeksReducer";
 import ajaxCallsInProgress from "./ajaxStatusReducer";
 
 const rootReducer = combineReducers({
   listOfGtinNotReceived,
-  serviceRequestCurrentWeeks,
+  weeks,
   ajaxCallsInProgress
 });
 

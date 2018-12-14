@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import LoadingPanel from "../common/LoadingPanel";
-import { getServiceRequestCurrentWeeks } from "../../actions/serviceRequestCurrentWeeksActions";
+import { getCurrentWeeks } from "../../actions/weeksActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import ReportGrid from "../common/ReportGrid";
 import { ListOfGtinNotReceivedColumns } from "../../config/ReportColumns";
 import { ListOfGtinNotReceivedExcelFileName } from "../../config/Settings";
 import ReportTitle from "../common/ReportTitle";
+import WeeksDropDown from "../common/WeeksDropDown";
 
 class ScheduleServiceRequestsStatusReport extends Component {
   componentDidMount() {
-    if (this.props.serviceRequestCurrentWeeks.length === 0) {
-      this.props.getServiceRequestCurrentWeeks();
+    if (this.props.weeks.length === 0) {
+      this.props.getCurrentWeeks();
     }
   }
 
@@ -19,6 +20,7 @@ class ScheduleServiceRequestsStatusReport extends Component {
     return (
       <div>
         <ReportTitle title="Scheduled Service Requests Status" />
+        <WeeksDropDown />
       </div>
     );
   }
@@ -26,16 +28,16 @@ class ScheduleServiceRequestsStatusReport extends Component {
 
 ScheduleServiceRequestsStatusReport.propTypes = {
   serviceRequestCurrentWeeks: PropTypes.array.isRequired,
-  getServiceRequestCurrentWeeks: PropTypes.func.isRequired
+  getCurrentWeeks: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  serviceRequestCurrentWeeks: state.serviceRequestCurrentWeeks
+  weeks: state.weeks
 });
 
 export default connect(
   mapStateToProps,
   {
-    getServiceRequestCurrentWeeks
+    getCurrentWeeks
   }
 )(ScheduleServiceRequestsStatusReport);

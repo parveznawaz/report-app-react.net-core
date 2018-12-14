@@ -1,6 +1,6 @@
 export default {
   listOfGtinNotReceived: [],
-  serviceRequestCurrentWeeks: [],
+  weeks: [],
   // authors: [],
   ajaxCallsInProgress: 0
 };
