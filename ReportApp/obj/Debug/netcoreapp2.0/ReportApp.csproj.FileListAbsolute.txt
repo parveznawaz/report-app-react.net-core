@@ -1,0 +1,10 @@
+C:\Users\parvezn\source\repos\ReportApp\ReportApp\bin\Debug\netcoreapp2.0\ReportApp.deps.json
+C:\Users\parvezn\source\repos\ReportApp\ReportApp\bin\Debug\netcoreapp2.0\ReportApp.runtimeconfig.json
+C:\Users\parvezn\source\repos\ReportApp\ReportApp\bin\Debug\netcoreapp2.0\ReportApp.runtimeconfig.dev.json
+C:\Users\parvezn\source\repos\ReportApp\ReportApp\bin\Debug\netcoreapp2.0\ReportApp.dll
+C:\Users\parvezn\source\repos\ReportApp\ReportApp\bin\Debug\netcoreapp2.0\ReportApp.pdb
+C:\Users\parvezn\source\repos\ReportApp\ReportApp\obj\Debug\netcoreapp2.0\ReportApp.csproj.CoreCompileInputs.cache
+C:\Users\parvezn\source\repos\ReportApp\ReportApp\obj\Debug\netcoreapp2.0\ReportApp.AssemblyInfoInputs.cache
+C:\Users\parvezn\source\repos\ReportApp\ReportApp\obj\Debug\netcoreapp2.0\ReportApp.AssemblyInfo.cs
+C:\Users\parvezn\source\repos\ReportApp\ReportApp\obj\Debug\netcoreapp2.0\ReportApp.dll
+C:\Users\parvezn\source\repos\ReportApp\ReportApp\obj\Debug\netcoreapp2.0\ReportApp.pdb

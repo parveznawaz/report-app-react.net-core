@@ -1,0 +1,12 @@
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Services\bin\Debug\netcoreapp2.0\ReportApp.Services.deps.json
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Services\bin\Debug\netcoreapp2.0\ReportApp.Services.dll
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Services\bin\Debug\netcoreapp2.0\ReportApp.Services.pdb
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Services\bin\Debug\netcoreapp2.0\ReportApp.DAL.dll
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Services\bin\Debug\netcoreapp2.0\ReportApp.DAL.pdb
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Services\obj\Debug\netcoreapp2.0\ReportApp.Services.csprojResolveAssemblyReference.cache
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Services\obj\Debug\netcoreapp2.0\ReportApp.Services.csproj.CoreCompileInputs.cache
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Services\obj\Debug\netcoreapp2.0\ReportApp.Services.AssemblyInfoInputs.cache
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Services\obj\Debug\netcoreapp2.0\ReportApp.Services.AssemblyInfo.cs
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Services\obj\Debug\netcoreapp2.0\ReportApp.Services.csproj.CopyComplete
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Services\obj\Debug\netcoreapp2.0\ReportApp.Services.dll
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Services\obj\Debug\netcoreapp2.0\ReportApp.Services.pdb

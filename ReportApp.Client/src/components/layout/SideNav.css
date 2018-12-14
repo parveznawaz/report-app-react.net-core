@@ -1,0 +1,75 @@
+.main-menu-fixed {
+  width: 60px;
+  min-height: 100%;
+  background-color: #002c6c;
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: 130px;
+}
+
+.toolkit .bg-blue {
+  background-color: #002c6c !important;
+}
+
+.ul-menu {
+  list-style: none;
+  padding: 0;
+  font-size: 12px;
+  /* margin-left: 14px; */
+}
+
+/* .ul-menu > li {
+  margin: 10px 0; 
+  padding: 12px 0;
+} */
+.ul-menu > li > div:last-child {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  top: 83px;
+  left: 52px;
+  min-height: 100%;
+  width: 50px;
+  background-color: #fff;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  transition: 0.3s ease;
+  z-index: 9999;
+}
+.ul-menu > li:hover {
+  background-color: #008dbd;
+}
+.ul-menu > li:hover > div:last-child {
+  visibility: visible;
+  opacity: 1;
+  width: 250px;
+  -webkit-box-shadow: 2px 0 5px -2px #888;
+  box-shadow: 2px 0 5px -2px #888;
+}
+
+.image-menu-svg-24,
+.image-menu-home,
+.image-menu-dash,
+.image-menu-copy,
+.image-menu-conf,
+.image-menu-settings,
+.image-menu-combo,
+.image-menu-back {
+  position: relative;
+  top: 0;
+  left: 13px;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+.ul-menu {
+  list-style: none;
+  padding: 0;
+  font-size: 12px;
+}
+.ul-menu > li {
+  margin: 5px 0;
+}

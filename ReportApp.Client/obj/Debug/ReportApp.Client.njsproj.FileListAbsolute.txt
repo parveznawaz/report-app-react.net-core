@@ -1,0 +1,3 @@
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Client\obj\Debug\ReportApp.Client.njsproj.CoreCompileInputs.cache
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Client\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.Client\obj\Debug\ReportApp.Client.njsprojResolveAssemblyReference.cache

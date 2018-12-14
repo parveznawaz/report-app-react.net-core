@@ -1,0 +1,55 @@
+{
+  "name": "react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.6.2",
+    "@progress/kendo-data-query": "^1.5.0",
+    "@progress/kendo-dateinputs-react-wrapper": "^2018.3.1017",
+    "@progress/kendo-react-animation": "^2.4.0",
+    "@progress/kendo-react-dateinputs": "^2.4.0",
+    "@progress/kendo-react-dropdowns": "^2.4.0",
+    "@progress/kendo-react-excel-export": "^2.4.0",
+    "@progress/kendo-react-grid": "^2.4.0",
+    "@progress/kendo-react-inputs": "^2.4.0",
+    "@progress/kendo-react-intl": "^2.4.0",
+    "@progress/kendo-react-layout": "^2.4.0",
+    "@progress/kendo-theme-default": "^2.62.0",
+    "@progress/kendo-theme-material": "^1.5.2",
+    "@progress/kendo-ui": "^2018.3.1205",
+    "@telerik/kendo-intl": "^1.4.4",
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^6.0.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "toastr": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.7",
+    "redux-immutable-state-invariant": "^2.1.0"
+  },
+  "proxy": "http://localhost:63870/"
+}
