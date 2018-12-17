@@ -8,26 +8,22 @@ import { getCurrentWeeks, getDefaultWeek } from "../../actions/FilterActions";
 class WeeksDropDown extends Component {
   constructor(props) {
     super(props);
-    this.state = { selectedWeekId: 0 };
+    this.state = { id: 0 };
   }
 
   componentDidMount() {
-    if (this.props.weeks.length === 0) {
-      this.props.getCurrentWeeks();
-    }
-    if (this.props.defaultWeek === 0) {
-      this.props.getDefaultWeek();
-    }
+    this.props.getCurrentWeeks();
+    this.props.getDefaultWeek();
   }
 
   onChange = event => {
-    this.setState({ selectedWeekId: event.target.value.schedid });
-    this.props.onWeekChange(event.target.value.schedid);
+    this.setState({ id: event.target.value.schedid });
+    this.props.onChange(event.target.value.schedid);
   };
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.selectedWeekId === 0 && nextProps.defaultWeek > 0) {
-      this.setState({ selectedWeekId: nextProps.defaultWeek });
+    if (this.state.id === 0 && nextProps.defaultWeek > 0) {
+      this.setState({ id: nextProps.defaultWeek });
     }
   }
 
@@ -41,7 +37,7 @@ class WeeksDropDown extends Component {
             textField="label"
             dataItemKey="schedid"
             value={_.find(this.props.weeks, {
-              schedid: this.state.selectedWeekId
+              schedid: this.state.id
             })}
             onChange={this.onChange}
             style={{ width: "250px" }}
@@ -58,7 +54,7 @@ WeeksDropDown.propTypes = {
   defaultWeek: PropTypes.number.isRequired,
   getCurrentWeeks: PropTypes.func.isRequired,
   getDefaultWeek: PropTypes.func.isRequired,
-  onWeekChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-import LoadingPanel from "../common/LoadingPanel";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import ReportGrid from "../common/ReportGrid";
-import { ListOfGtinNotReceivedColumns } from "../../config/ReportColumns";
-import { ListOfGtinNotReceivedExcelFileName } from "../../config/Settings";
 import ReportTitle from "../common/ReportTitle";
-import WeeksDropDown from "../common/WeeksDropDown";
 import ReportFilters from "../common/ReportFilters";
+import * as filterTypes from "../common/filterTypes";
 
 class ScheduleServiceRequestsStatusReport extends Component {
   componentDidMount() {}
@@ -16,7 +12,9 @@ class ScheduleServiceRequestsStatusReport extends Component {
     return (
       <div>
         <ReportTitle title="Scheduled Service Requests Status" />
-        <ReportFilters />
+        <ReportFilters
+          filterType={filterTypes.ScheduleServiceRequestsStatusReportFilter}
+        />
       </div>
     );
   }

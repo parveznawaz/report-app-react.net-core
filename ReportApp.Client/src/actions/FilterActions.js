@@ -36,3 +36,7 @@ export const getDefaultWeek = () => dispatch => {
       toastr.error("Connection error");
     });
 };
+
+export const setFilter = data => dispatch => {
+  dispatch({ type: types.SET_FILTERS, payload: data });
+};
