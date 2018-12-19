@@ -1,3 +1,82 @@
+export const IncidentsReportsForItemReceivedColumns = [
+  {
+    field: "gtin_14",
+    title: "GTIN",
+    filter: "text",
+    width: "165px",
+    minWidth: 165
+  },
+  {
+    field: "descriptions",
+    title: "Descriptions",
+    filter: "text",
+    width: "200px",
+    minWidth: 200
+  },
+  {
+    field: "sampleIncidentStatus",
+    title: "Sample",
+    filter: "text",
+    width: "165px",
+    minWidth: 165
+  },
+  {
+    field: "eComIncidentStatus",
+    title: "eCom",
+    filter: "text",
+    width: "165px",
+    minWidth: 165
+  },
+  {
+    field: "dataEntryIncidentStatus",
+    title: "Data Entry",
+    filter: "text",
+    width: "165px",
+    minWidth: 165
+  },
+  {
+    field: "fsIncidentStatus",
+    title: "FS",
+    filter: "numeric",
+    width: "165px",
+    minWidth: 165
+  },
+  {
+    field: "measuredIncidentStatus",
+    title: "Measured",
+    filter: "numeric",
+    width: "165px",
+    minWidth: 165
+  },
+  {
+    field: "mktgIncidentStatus",
+    title: "Mktg",
+    filter: "numeric",
+    width: "165px",
+    minWidth: 165
+  },
+  {
+    field: "npingIncidentStatus",
+    title: "Nping",
+    filter: "numeric",
+    width: "165px",
+    minWidth: 165
+  },
+  {
+    field: "planoIncidentStatus",
+    title: "plano",
+    filter: "numeric",
+    width: "165px",
+    minWidth: 165
+  },
+  {
+    field: "weightedIncidentStatus",
+    title: "Weighted",
+    filter: "numeric",
+    width: "165px",
+    minWidth: 165
+  }
+];
 export const ScheduledServiceRequestsColumns = [
   {
     field: "CompanyName",

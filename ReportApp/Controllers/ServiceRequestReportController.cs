@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReportApp.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -45,23 +46,43 @@ namespace ReportApp.Controllers
 
         // GET: api/ServiceRequestReport/SR_ScheduledReportWeeklyByGtin
         [HttpGet("SR_ScheduledReportWeeklyByGtin/{startWeekId}/{endWeekId}/{isExternalId}", Name = "SR_ScheduledReportWeeklyByGtin")]
-        public async Task<IEnumerable<dynamic>> SR_ScheduledReportWeeklyByGtin(int startWeekId, int endWeekId, int isExternalId) =>
-            await serviceRequestService.ExecuteStoredProcedure("SR_ScheduledReportWeeklyByGtin", new List<SqlParameter>
+        public async Task<IEnumerable<dynamic>> SR_ScheduledReportWeeklyByGtin(int startWeekId, int endWeekId, int isExternalId)
+        {
+            var parameters = new List<SqlParameter>
             {
                 new SqlParameter("@StartWeekSchId",startWeekId),
-                new SqlParameter("@EndWeekSchId",endWeekId),
-                new SqlParameter("@IsExternal",isExternalId)
-            });
+                new SqlParameter("@EndWeekSchId",endWeekId)
+            };
+            if (isExternalId == 0 || isExternalId == 1)
+            {
+                parameters.Add(new SqlParameter("@IsExternal", isExternalId));
+            }
+            else
+            {
+                parameters.Add(new SqlParameter("@IsExternal", DBNull.Value));
+            }
+            return await serviceRequestService.ExecuteStoredProcedure("SR_ScheduledReportWeeklyByGtin", parameters);
+        }
 
         // GET: api/ServiceRequestReport/SR_ScheduledReportListGtin
         [HttpGet("SR_ScheduledReportListGtin/{startWeekId}/{endWeekId}/{isExternalId}/{incidentId}", Name = "SR_ScheduledReportListGtin")]
-        public async Task<IEnumerable<dynamic>> SR_ScheduledReportListGtin(int startWeekId, int endWeekId, int isExternalId, int incidentId) =>
-            await serviceRequestService.ExecuteStoredProcedure("SR_ScheduledReportListGtin", new List<SqlParameter>
+        public async Task<IEnumerable<dynamic>> SR_ScheduledReportListGtin(int startWeekId, int endWeekId, int isExternalId, int incidentId)
+        {
+            var parameters = new List<SqlParameter>
             {
                 new SqlParameter("@StartWeekSchId",startWeekId),
                 new SqlParameter("@EndWeekSchId",endWeekId),
-                new SqlParameter("@IsExternal",isExternalId),
                 new SqlParameter("@Incident",incidentId)
-            });
+            };
+            if (isExternalId == 0 || isExternalId == 1)
+            {
+                parameters.Add(new SqlParameter("@IsExternal", isExternalId));
+            }
+            else
+            {
+                parameters.Add(new SqlParameter("@IsExternal", DBNull.Value));
+            }
+            return await serviceRequestService.ExecuteStoredProcedure("SR_ScheduledReportListGtin", parameters);
+        }
     }
 }

@@ -11,14 +11,12 @@ import { ScheduledServiceRequestsExcelFileName } from "../../config/Settings";
 import { ScheduledServiceRequestsColumns } from "../../config/ReportColumns";
 
 class ScheduleServiceRequestsStatusReport extends Component {
-  componentDidMount() {}
-
   componentWillReceiveProps({ filters }) {
     if (
       this.props.filters.startWeek !== filters.startWeek ||
       this.props.filters.endWeek !== filters.endWeek ||
-      this.props.filters.received != filters.received ||
-      this.props.filters.result != filters.result
+      this.props.filters.received !== filters.received ||
+      this.props.filters.result !== filters.result
     ) {
       this.loadData(filters);
     }
@@ -33,6 +31,8 @@ class ScheduleServiceRequestsStatusReport extends Component {
     );
   };
 
+  refreshData = () => this.loadData(this.props.filters);
+
   render() {
     return (
       <div>
@@ -44,7 +44,7 @@ class ScheduleServiceRequestsStatusReport extends Component {
           data={this.props.data.scheduledServiceRequests}
           columns={ScheduledServiceRequestsColumns}
           fileName={ScheduledServiceRequestsExcelFileName}
-          loadData={this.loadData}
+          loadData={this.refreshData}
         />
         <LoadingPanel />
       </div>

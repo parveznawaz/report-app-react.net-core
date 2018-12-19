@@ -8,6 +8,7 @@ export default {
   filters: {},
   data: {
     listOfGtinNotReceived: [],
-    scheduledServiceRequests: []
+    scheduledServiceRequests: [],
+    incidentsReportsForItemReceived: []
   }
 };

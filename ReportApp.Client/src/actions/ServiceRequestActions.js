@@ -57,3 +57,34 @@ export const getScheduleServiceRequests = (
       toastr.error("Connection error");
     });
 };
+
+export const getIncidentsReportsForItemReceived = (
+  startWeekId,
+  endWeekId,
+  isExternalId,
+  incidentId
+) => dispatch => {
+  dispatch(beginAjaxCall());
+  axios
+    .get(
+      "/api/ServiceRequestReport/SR_ScheduledReportListGtin/" +
+        startWeekId +
+        "/" +
+        endWeekId +
+        "/" +
+        isExternalId +
+        "/" +
+        incidentId
+    )
+    .then(res => {
+      dispatch({
+        type: types.LOAD_INCIDENTS_REPORTS_FOR_ITEM_RECEIVED,
+        payload: res.data
+      });
+      dispatch(endAjaxCall());
+    })
+    .catch(error => {
+      dispatch(ajaxCallError(error));
+      toastr.error("Connection error");
+    });
+};

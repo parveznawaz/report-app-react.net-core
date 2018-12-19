@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import * as filterTypes from "./filterTypes";
 import DropDownFilter from "./DropDownFilter";
-import { ResultsOptions, ReceivedOptions } from "../../config/Settings";
+import ToggleFilter from "./ToggleFilter";
+import {
+  ResultsOptions,
+  ReceivedOptions,
+  IsExternalOptions
+} from "../../config/Settings";
 import {
   getCurrentWeeks,
   getDefaultWeek,
@@ -17,7 +22,9 @@ class ReportFilters extends Component {
       startWeek: 0,
       endWeek: 0,
       received: 0,
-      result: 0
+      result: 0,
+      isExternal: 2,
+      isShowAllIncident: true
     };
     this.props.setFilter({ ...this.state });
   }
@@ -57,6 +64,16 @@ class ReportFilters extends Component {
     this.props.setFilter({ received });
   };
 
+  onIsExternalChange = isExternal => {
+    this.setState({ isExternal });
+    this.props.setFilter({ isExternal });
+  };
+
+  onShowAllIncident = isShowAllIncident => {
+    this.setState({ isShowAllIncident });
+    this.props.setFilter({ isShowAllIncident });
+  };
+
   render() {
     let filters = <div />;
     switch (this.props.filterType) {
@@ -94,6 +111,41 @@ class ReportFilters extends Component {
               textField="label"
               dataItemKey="id"
               onChange={this.onResultChange}
+            />
+          </form>
+        );
+        break;
+      case filterTypes.IncidentsReportsForItemReceivedFilter:
+        filters = (
+          <form className="k-form">
+            <DropDownFilter
+              data={this.props.weeks.currentWeeks}
+              title={"Start Week"}
+              id={this.state.startWeek}
+              textField="label"
+              dataItemKey="schedid"
+              onChange={this.onStartWeekChange}
+            />
+            <DropDownFilter
+              data={this.props.weeks.currentWeeks}
+              title={"End Week"}
+              id={this.state.endWeek}
+              textField="label"
+              dataItemKey="schedid"
+              onChange={this.onEndWeekChange}
+            />
+            <DropDownFilter
+              data={IsExternalOptions}
+              title={"Internal/External"}
+              id={this.state.isExternal}
+              textField="label"
+              dataItemKey="id"
+              onChange={this.onIsExternalChange}
+            />
+            <ToggleFilter
+              title="Show all GTINS"
+              checked={this.state.isShowAllIncident}
+              onChange={this.onShowAllIncident}
             />
           </form>
         );
