@@ -1,6 +1,8 @@
 ﻿using ReportApp.DAL;
 using ReportApp.Services.Interfaces;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 
 namespace ReportApp.Services.Services
@@ -14,11 +16,7 @@ namespace ReportApp.Services.Services
             dataAccess = _dataAccess;
         }        
 
-        public async Task<int> GetServiceRequestDefaultWeek() => (int)await dataAccess.ExecuteScalar("GetServiceRequestDefaultWeek", null);
-
-        public async Task<IEnumerable<dynamic>> GetServiceRequestListofGTIN_NotReceived() => await dataAccess.Execute("GetServiceRequestListofGTIN_NotReceived", null);
-
-        public async Task<IEnumerable<dynamic>> GetServiceRequestCurrentWeeks() => await dataAccess.Execute("GetServiceRequestCurrentWeeks", null);
-        
+        public async Task<object> ExecuteScaler(string StoredProcuedureName, List<SqlParameter> parameters) => await dataAccess.ExecuteScalar(StoredProcuedureName, parameters);
+        public async Task<IEnumerable<dynamic>> ExecuteStoredProcedure(string StoredProcedureName, List<SqlParameter> parameters) => await dataAccess.Execute(StoredProcedureName, parameters);
     }
 }

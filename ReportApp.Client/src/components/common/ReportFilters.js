@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import * as filterTypes from "./filterTypes";
 import DropDownFilter from "./DropDownFilter";
 import { ResultsOptions, ReceivedOptions } from "../../config/Settings";
-import { getCurrentWeeks, getDefaultWeek } from "../../actions/FilterActions";
+import {
+  getCurrentWeeks,
+  getDefaultWeek,
+  setFilter
+} from "../../actions/FilterActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
@@ -15,6 +19,7 @@ class ReportFilters extends Component {
       received: 0,
       result: 0
     };
+    this.props.setFilter({ ...this.state });
   }
   componentDidMount() {
     this.props.getCurrentWeeks();
@@ -22,39 +27,44 @@ class ReportFilters extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.startWeek === 0 && nextProps.defaultWeek > 0) {
-      this.setState({ startWeek: nextProps.defaultWeek });
+    if (this.state.startWeek === 0 && nextProps.weeks.defaultWeek > 0) {
+      this.setState({ startWeek: nextProps.weeks.defaultWeek });
+      this.props.setFilter({ startWeek: nextProps.weeks.defaultWeek });
     }
-    if (this.state.endWeek === 0 && nextProps.defaultWeek > 0) {
-      this.setState({ endWeek: nextProps.defaultWeek });
+    if (this.state.endWeek === 0 && nextProps.weeks.defaultWeek > 0) {
+      this.setState({ endWeek: nextProps.weeks.defaultWeek });
+      this.props.setFilter({ endWeek: nextProps.weeks.defaultWeek });
     }
   }
 
-  onStartWeekChange = value => {
-    this.setState({ startWeek: value });
+  onStartWeekChange = startWeek => {
+    this.setState({ startWeek });
+    this.props.setFilter({ startWeek });
   };
 
-  onEndWeekChange = value => {
-    this.setState({ endWeek: value });
+  onEndWeekChange = endWeek => {
+    this.setState({ endWeek });
+    this.props.setFilter({ endWeek });
   };
 
-  onResultChange = value => {
-    this.setState({ result: value });
+  onResultChange = result => {
+    this.setState({ result });
+    this.props.setFilter({ result });
   };
 
-  onReceivedChange = value => {
-    this.setState({ received: value });
+  onReceivedChange = received => {
+    this.setState({ received });
+    this.props.setFilter({ received });
   };
 
   render() {
     let filters = <div />;
-    console.log(this.state.startWeek);
     switch (this.props.filterType) {
       case filterTypes.ScheduleServiceRequestsStatusReportFilter:
         filters = (
-          <form className="k-form" onSubmit={this.handleSubmit}>
+          <form className="k-form">
             <DropDownFilter
-              data={this.props.weeks}
+              data={this.props.weeks.currentWeeks}
               title={"Start Week"}
               id={this.state.startWeek}
               textField="label"
@@ -62,7 +72,7 @@ class ReportFilters extends Component {
               onChange={this.onStartWeekChange}
             />
             <DropDownFilter
-              data={this.props.weeks}
+              data={this.props.weeks.currentWeeks}
               title={"End Week"}
               id={this.state.endWeek}
               textField="label"
@@ -87,6 +97,9 @@ class ReportFilters extends Component {
             />
           </form>
         );
+        break;
+      default:
+        filters = <div />;
     }
 
     return (
@@ -102,21 +115,21 @@ class ReportFilters extends Component {
 }
 
 ReportFilters.propTypes = {
-  weeks: PropTypes.array.isRequired,
-  defaultWeek: PropTypes.number.isRequired,
+  weeks: PropTypes.object.isRequired,
   getCurrentWeeks: PropTypes.func.isRequired,
-  getDefaultWeek: PropTypes.func.isRequired
+  getDefaultWeek: PropTypes.func.isRequired,
+  setFilter: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  weeks: state.weeks,
-  defaultWeek: state.defaultWeek
+  weeks: state.weeks
 });
 
 export default connect(
   mapStateToProps,
   {
     getCurrentWeeks,
-    getDefaultWeek
+    getDefaultWeek,
+    setFilter
   }
 )(ReportFilters);

@@ -36,6 +36,8 @@ DropDownFilter.propTypes = {
   id: PropTypes.number.isRequired,
   data: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
+  textField: PropTypes.string.isRequired,
+  dataItemKey: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired
 };
 

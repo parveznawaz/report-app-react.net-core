@@ -1,7 +1,13 @@
 export default {
   listOfGtinNotReceived: [],
-  weeks: [],
-  defaultWeek: 0,
+  weeks: {
+    defaultWeek: 0,
+    currentWeeks: []
+  },
   ajaxCallsInProgress: 0,
-  filters: {}
+  filters: {},
+  data: {
+    listOfGtinNotReceived: [],
+    scheduledServiceRequests: []
+  }
 };

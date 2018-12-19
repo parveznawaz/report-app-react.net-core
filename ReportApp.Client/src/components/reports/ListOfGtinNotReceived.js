@@ -9,7 +9,7 @@ import { ListOfGtinNotReceivedExcelFileName } from "../../config/Settings";
 import ReportTitle from "../common/ReportTitle";
 class ListOfGtinNotReceived extends Component {
   componentDidMount() {
-    if (this.props.listOfGtinNotReceived.length === 0) {
+    if (this.props.data.listOfGtinNotReceived.length === 0) {
       this.props.getListOfGtinNotReceived();
     }
   }
@@ -19,7 +19,7 @@ class ListOfGtinNotReceived extends Component {
       <div>
         <ReportTitle title="List of GTIN Not Received" />
         <ReportGrid
-          data={this.props.listOfGtinNotReceived}
+          data={this.props.data.listOfGtinNotReceived}
           columns={ListOfGtinNotReceivedColumns}
           fileName={ListOfGtinNotReceivedExcelFileName}
           loadData={this.props.getListOfGtinNotReceived}
@@ -31,12 +31,12 @@ class ListOfGtinNotReceived extends Component {
 }
 
 ListOfGtinNotReceived.propTypes = {
-  listOfGtinNotReceived: PropTypes.array.isRequired,
+  data: PropTypes.object.isRequired,
   getListOfGtinNotReceived: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  listOfGtinNotReceived: state.listOfGtinNotReceived
+  data: state.data
 });
 
 export default connect(

@@ -26,3 +26,34 @@ export const getListOfGtinNotReceived = () => dispatch => {
       toastr.error("Connection error");
     });
 };
+
+export const getScheduleServiceRequests = (
+  startWeekId,
+  endWeekId,
+  receivedId,
+  resultId
+) => dispatch => {
+  dispatch(beginAjaxCall());
+  axios
+    .get(
+      "/api/ServiceRequestReport/SR_ScheduledServiceRequests/" +
+        startWeekId +
+        "/" +
+        endWeekId +
+        "/" +
+        receivedId +
+        "/" +
+        resultId
+    )
+    .then(res => {
+      dispatch({
+        type: types.LOAD_SCHEDULED_SERVICE_REQUESTS,
+        payload: res.data
+      });
+      dispatch(endAjaxCall());
+    })
+    .catch(error => {
+      dispatch(ajaxCallError(error));
+      toastr.error("Connection error");
+    });
+};

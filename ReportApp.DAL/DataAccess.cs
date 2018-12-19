@@ -67,7 +67,7 @@ namespace ReportApp.DAL
         //    return parameterObject;
         //}
 
-        public async Task<int> ExecuteNonQuery(string procedureName, List<DbParameter> parameters, CommandType commandType = CommandType.StoredProcedure)
+        public async Task<int> ExecuteNonQuery(string procedureName, List<SqlParameter> parameters, CommandType commandType = CommandType.StoredProcedure)
         {
             int returnValue = -1;
 
@@ -121,7 +121,7 @@ namespace ReportApp.DAL
             return returnValue;
         }
 
-        public async Task<IEnumerable<dynamic>> Execute(string procedureName, List<DbParameter> parameters, CommandType commandType = CommandType.StoredProcedure)
+        public async Task<IEnumerable<dynamic>> Execute(string procedureName, List<SqlParameter> parameters, CommandType commandType = CommandType.StoredProcedure)
         {
             try
             {
