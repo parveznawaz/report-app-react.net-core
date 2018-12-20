@@ -15,18 +15,18 @@ class DropDownFilter extends Component {
     );
 
     return (
-      <div>
-        <label className="k-form-field">
-          <span>{this.props.title}</span>
+      <div className="form-group row">
+        <label className="col-2 col-form-label">{this.props.title}</label>
+        <div className="col-4">
           <DropDownList
+            className="form-control"
             data={this.props.data}
             textField={this.props.textField}
             dataItemKey={this.props.dataItemKey}
             value={selectedItem}
             onChange={this.onChange}
-            style={{ width: "250px" }}
           />
-        </label>
+        </div>
       </div>
     );
   }

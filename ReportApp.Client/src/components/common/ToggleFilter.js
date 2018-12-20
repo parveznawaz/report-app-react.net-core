@@ -9,11 +9,11 @@ class ToggleFilter extends Component {
 
   render() {
     return (
-      <div>
-        <label className="k-form-field">
-          <span>{this.props.title}</span>
+      <div className="form-group row">
+        <label className="col-2 col-form-label">{this.props.title}</label>
+        <div className="col-4">
           <Switch onChange={this.onChange} checked={this.props.checked} />
-        </label>
+        </div>
       </div>
     );
   }
