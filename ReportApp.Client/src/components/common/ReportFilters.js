@@ -79,7 +79,7 @@ class ReportFilters extends Component {
     switch (this.props.filterType) {
       case filterTypes.ScheduleServiceRequestsStatusReportFilter:
         filters = (
-          <form className="k-form">
+          <form className="k-form-inline">
             <DropDownFilter
               data={this.props.weeks.currentWeeks}
               title={"Start Week"}
@@ -117,7 +117,7 @@ class ReportFilters extends Component {
         break;
       case filterTypes.IncidentsReportsForItemReceivedFilter:
         filters = (
-          <form className="k-form">
+          <form className="k-form-inline">
             <DropDownFilter
               data={this.props.weeks.currentWeeks}
               title={"Start Week"}

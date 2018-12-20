@@ -29,9 +29,8 @@ class ReportGrid extends Component {
     ));
 
     let gridContent = (
-      <div>
+      <div className="grid">
         <Grid
-          style={{ height: "700px" }}
           data={orderBy(
             this.props.data.slice(
               this.state.skip,
@@ -64,7 +63,7 @@ class ReportGrid extends Component {
           }}
         >
           <GridToolbar>
-            <div className="row">
+            <div className="row toolbar">
               <ExportExcel
                 className="col-xs-12 col-sm-6"
                 data={this.props.data}
@@ -86,7 +85,7 @@ class ReportGrid extends Component {
       </div>
     );
 
-    return <div className="report-grid">{gridContent}</div>;
+    return <div className="">{gridContent}</div>;
   }
 }
 

@@ -18,30 +18,30 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div>
-            <Header />
-            {/* <Route exact path="/" component={Landing} /> */}
-            <div className="row">
-              <SideNav />
-              <div className="report-area">
-                {/* <Route exact path="/login" component={Login} /> */}
-                <Route exact path="/" component={Reports} />
-                <Route exact path="/reports" component={Reports} />
-                <Route
-                  exact
-                  path="/reports/listOfGtinNotReceived"
-                  component={ListOfGtinNotReceived}
-                />
-                <Route
-                  exact
-                  path="/reports/incidentsReportsForItemReceived"
-                  component={IncidentsReportsForItemReceived}
-                />
-                <Route
-                  exact
-                  path="/reports/scheduleServiceRequestsStatusReport"
-                  component={ScheduleServiceRequestsStatusReport}
-                />
+          <div className="container-fluid">
+            <div className="col App">
+              <Header className="row" />
+              <div className="row">
+                <SideNav />
+                <div className="col report-area">
+                  <Route exact path="/" component={Reports} />
+                  <Route exact path="/reports" component={Reports} />
+                  <Route
+                    exact
+                    path="/reports/listOfGtinNotReceived"
+                    component={ListOfGtinNotReceived}
+                  />
+                  <Route
+                    exact
+                    path="/reports/incidentsReportsForItemReceived"
+                    component={IncidentsReportsForItemReceived}
+                  />
+                  <Route
+                    exact
+                    path="/reports/scheduleServiceRequestsStatusReport"
+                    component={ScheduleServiceRequestsStatusReport}
+                  />
+                </div>
               </div>
             </div>
           </div>

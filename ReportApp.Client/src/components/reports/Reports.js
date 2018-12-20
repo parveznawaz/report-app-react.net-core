@@ -5,7 +5,7 @@ import "./Reports.css";
 export default class Reports extends Component {
   render() {
     return (
-      <div className="container reports">
+      <div className="container">
         <ul className="list-group list-group-flush col-8">
           <li className="list-group-item list-group-item-action">
             <Link

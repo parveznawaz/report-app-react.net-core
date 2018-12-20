@@ -1,13 +1,7 @@
-.report-grid {
-  padding-left: 50px;
-  padding-right: 50px;
+.toolbar {
+  margin-left: 0px;
 }
 
 .grid {
-  height: 80%;
-}
-
-.row {
-  margin-right: 0px;
-  margin-left: 0px;
+  width: 95%;
 }
