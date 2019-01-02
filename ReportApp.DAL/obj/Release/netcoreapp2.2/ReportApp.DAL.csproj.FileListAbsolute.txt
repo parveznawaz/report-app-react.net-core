@@ -1,0 +1,9 @@
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.DAL\bin\Release\netcoreapp2.2\ReportApp.DAL.deps.json
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.DAL\bin\Release\netcoreapp2.2\ReportApp.DAL.dll
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.DAL\bin\Release\netcoreapp2.2\ReportApp.DAL.pdb
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.DAL\obj\Release\netcoreapp2.2\ReportApp.DAL.csprojResolveAssemblyReference.cache
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.DAL\obj\Release\netcoreapp2.2\ReportApp.DAL.csproj.CoreCompileInputs.cache
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.DAL\obj\Release\netcoreapp2.2\ReportApp.DAL.AssemblyInfoInputs.cache
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.DAL\obj\Release\netcoreapp2.2\ReportApp.DAL.AssemblyInfo.cs
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.DAL\obj\Release\netcoreapp2.2\ReportApp.DAL.dll
+C:\Users\parvezn\source\repos\ReportApp\ReportApp.DAL\obj\Release\netcoreapp2.2\ReportApp.DAL.pdb

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ReportApp.Controllers
 {
     [Produces("application/json")]
-    [Route("api/ServiceRequestReport")]
+    [Route("ServiceRequestReport")]
     public class ServiceRequestReportController : Controller
     {
 
