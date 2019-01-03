@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 
 export default function SideNav() {
   return (
-    <div className="main-menu-fixed">
+    <div
+      className="main-menu-fixed"
+      style={{ height: window.outerHeight - 210 }}
+    >
       <ul className="ul-menu">
         <li>
           <Link to="/reports">

@@ -29,8 +29,12 @@ class ReportGrid extends Component {
     ));
 
     let gridContent = (
-      <div className="grid">
+      <div>
         <Grid
+          style={{
+            width: window.innerWidth - 180,
+            height: window.innerHeight - 250
+          }}
           data={orderBy(
             this.props.data.slice(
               this.state.skip,

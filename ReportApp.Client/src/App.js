@@ -22,8 +22,10 @@ class App extends Component {
             <div className="col App">
               <Header className="row" />
               <div className="row">
-                <SideNav />
-                <div className="col report-area">
+                <div className="col-1">
+                  <SideNav />
+                </div>
+                <div className="col-11">
                   <Route exact path="/" component={Reports} />
                   <Route exact path="/reports" component={Reports} />
                   <Route

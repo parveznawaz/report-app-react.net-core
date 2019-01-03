@@ -2,7 +2,9 @@
   width: 60px;
   min-height: 100%;
   background-color: #002c6c;
-  position: fixed;
+  margin-top: 0px;
+  top: 0px;
+  bottom: 0px;
 }
 
 .toolkit .bg-blue {
@@ -13,7 +15,7 @@
   list-style: none;
   padding: 0;
   font-size: 12px;
-  margin-left: 14px;
+  margin-left: 6px;
 }
 
 .ul-menu > li > div:last-child {
@@ -62,6 +64,6 @@
   padding: 0;
   font-size: 12px;
 }
-.ul-menu > li {
+/* .ul-menu > li {
   margin: 5px 0;
-}
+} */
