@@ -1,4 +1,7 @@
 /ReportApp.Client/node_modules
 /
 .vs
-ReportApp.Client/build
+ReportApp.Client/build/
+ReportApp.Client/build/static/
+ReportApp.Client/build/static/js/
+ReportApp.Client/build/static/css/
